@@ -40,7 +40,7 @@ icons <- tibble::tribble(
   "Amphibians", 0.9,
   "Mammals", 0.7,
   "Birds", 0.9,
-  "Other...", 0.7,
+  "Other", 0.7,
   "Point/Microhabitat", 0.2, 
   "Plot", 0.4,
   "Local", 0.6,
