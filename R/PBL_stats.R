@@ -7,6 +7,7 @@ dat$n_impacted %>% sum()
 c(dat$n_reference, dat$n_impacted) %>% sum()
 
 (!is.na(dat$alpha_diversity)) %>% sum()
+dat[!is.na(dat$alpha_diversity),]$Article_ID %>% unique() %>% length()
 
 # Models
 
