@@ -1,0 +1,35 @@
+\lstset{
+    basicstyle=\footnotesize\ttfamily, % Default font
+     numbers=left,              % Location of line numbers
+    numberstyle=\tiny,          % Style of line numbers
+     stepnumber=1,              % Margin between line numbers
+    numbersep=5pt,              % Margin between line numbers and text
+    tabsize=2,                  % Size of tabs
+    extendedchars=true,
+    breaklines=true,            % Lines will be wrapped
+    keywordstyle=\color{red},
+    frame=b,
+    % keywordstyle=[1]\textbf,
+    % keywordstyle=[2]\textbf,
+    % keywordstyle=[3]\textbf,
+    % keywordstyle=[4]\textbf,   \sqrt{\sqrt{}}
+    stringstyle=\color{white}\ttfamily, % Color of strings
+    showspaces=false,
+    showtabs=false,
+    xleftmargin=17pt,
+    framexleftmargin=17pt,
+    framexrightmargin=5pt,
+    framexbottommargin=4pt,
+    % backgroundcolor=\color{lightgray},
+    showstringspaces=false
+}
+\lstloadlanguages{
+     Java
+}
+% \DeclareCaptionFont{blue}{\color{blue}} 
+
+% \captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}, labelformat=empty}

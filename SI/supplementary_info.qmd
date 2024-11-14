@@ -1,0 +1,438 @@
+---
+title: "Supplementary Information for:"
+format:
+  pdf:
+    number-sections: false
+    colorlinks: false
+    link-citations: true
+    include-in-header:
+      - text: |
+          \usepackage{leading}
+          \usepackage{listings}
+          \usepackage{setspace}
+          \input{listing_opts.tex}
+    extra_dependencies: ["float"]
+editor: visual
+execute:
+  eval: true  
+  echo: false
+  warning: false
+  output: true
+bibliography: references.bib
+csl: nature.csl
+---
+
+
+```{=tex}
+\vspace{-1.7cm}
+\begin{center}
+\begin{huge}  
+The global human impact on biodiversity
+\end{huge} 
+
+\vspace*{0.4cm}
+
+François Keck\textsuperscript{*,1,2}, Tianna Peller\textsuperscript{1,2}, Roman Alther\textsuperscript{1,2}, Cécilia Barouillet\textsuperscript{3,4},\\
+Rosetta Blackman\textsuperscript{1,2}, Éric Capo\textsuperscript{5}, Teofana Chonova\textsuperscript{6}, Marjorie Couton\textsuperscript{1,2},\\ Lena Fehlinger\textsuperscript{7}, Dominik Kirschner\textsuperscript{2,8,9}, Mara Knüsel\textsuperscript{1,2}, Lucile Muneret\textsuperscript{10,11},\\
+Rebecca Oester\textsuperscript{1,2,12}, Kálmán Tapolczai\textsuperscript{13,14}, Heng Zhang\textsuperscript{1,2}, Florian Altermatt\textsuperscript{*,1,2}
+\end{center}
+
+\vspace*{0.1cm}
+
+\begin{footnotesize}  
+\textsuperscript{1} Department of Evolutionary Biology and Environmental Studies, University of Zurich, Winterthurerstr. 190, CH-8057 Zürich, Switzerland
+
+\textsuperscript{2} Eawag, Swiss Federal Institute of Aquatic Science and Technology, Department of Aquatic Ecology, Überlandstrasse 133, CH-8600 Dübendorf, Switzerland
+
+\textsuperscript{3} INRAE, Université Savoie Mont Blanc, CARRTEL, 74200, Thonon-les-Bains, France
+
+\textsuperscript{4} Pôle R\&D ECLA, CARRTEL, 74200, Thonon-les-Bains, France
+
+\textsuperscript{5} Department of Ecology and Environmental Science, Umeå University, Linnaeus väg 4-6, 907 36, Umeå, Sweden
+
+\textsuperscript{6} Eawag, Swiss Federal Institute of Aquatic Science and Technology, Department Environmental Chemistry, Überlandstrasse 133, CH-8600 Dübendorf, Switzerland
+
+\textsuperscript{7} GEA Aquatic Ecology Group, University of Vic - Central University of Catalonia, Carrer de la Laura 13, 08500 Vic, Spain
+
+\textsuperscript{8} Department of Environmental Systems Science, Institute of Terrestrial Ecosystems, Ecosystems and landscape evolution, ETH Zürich, CH-8092, Zürich, Switzerland
+
+\textsuperscript{9} Department of Landscape Dynamics \& Ecology, Swiss Federal Research Institute WSL, Zürcherstrasse 111, 8903 Birmensdorf, Switzerland.
+
+\textsuperscript{10} INRAE, Université Paris-Saclay, AgroParisTech, UMR Agronomie, 91120, Palaiseau, France
+
+\textsuperscript{11} INRAE, Agroécologie, Institut Agro, Univ. Bourgogne, Univ. Bourgogne Franche-Comté, F-21000, Dijon, France
+
+\textsuperscript{12} Institute of Microbiology, University of Applied Sciences and Arts of Southern Switzerland, via Flora Ruchat Roncati 15, CH-6850 Mendrisio, Switzerland
+
+\textsuperscript{13} HUN-REN Balaton Limnological Research Institute, Klebelsberg Kuno Street 3, H-8237 Tihany, Hungary
+
+\textsuperscript{14} National Laboratory for Water Science and Water Security, HUN-REN Balaton Limnological Research Institute, Klebelsberg Kuno Street 3, H-8237 Tihany, Hungary
+
+\vspace*{0.3cm}
+
+\textsuperscript{*} Corresponding authors
+
+\end{footnotesize}  
+
+```
+```{=tex}
+\onehalfspacing
+\newpage
+\renewcommand{\contentsname}{Supplementary Information}
+\tableofcontents
+\newcounter{figs}
+
+\newcounter{sectionCounter}
+\newcommand{\thisSectionCount}{\textbf{S\arabic{sectionCounter}.}}
+\newcommand{\sectionTitle}[1]{%
+  \refstepcounter{sectionCounter}\vspace{18pt}%
+  \addcontentsline{toc}{subsection}{\thisSectionCount\space\textbf{#1}}%
+  \noindent{\large\thisSectionCount\space\textbf{#1}}%
+}
+
+\newcounter{figCounter}
+\newcommand{\thisFigCount}{Figure S\arabic{figCounter}}
+\newcommand{\figTitle}[1]{%
+  \refstepcounter{figCounter}\vspace{18pt}%
+  \addcontentsline{toc}{subsubsection}{\thisFigCount\space#1}%
+  \noindent{\textbf{\thisFigCount}}%
+}
+
+\newcounter{listingCounter}
+\newcommand{\thisListingCount}{Listing S\arabic{listingCounter}}
+\newcommand{\listingTitle}[1]{%
+  \refstepcounter{listingCounter}\vspace{18pt}%
+  \addcontentsline{toc}{subsubsection}{\thisListingCount\space#1}%
+}
+```
+\pagebreak
+
+```{r}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+```
+
+```{r}
+dat <- readRDS("../computed/dat.rds")
+test_pub_bias <- readRDS("../computed/test_pub_bias.rds")
+```
+
+# Supplementary Methods
+
+\sectionTitle{Stratified analysis: observational studies}
+
+\phantomsection
+
+![](../results/Figure_1_strat_field.pdf){fig-align="center"}
+
+\figTitle{} Location of diversity comparisons from observational studies and their distribution across biomes, pressures, organisms and scale. **a**, Global map of the 2,501 comparisons of diversity included. **b–e**, Distribution of comparisons of diversity by type of biome, human pressures, groups of organisms and spatial scale. These variables correspond to the four main factors tested in this study.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+![](../results/Figure_2_strat_field.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated from observational studies. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+![](../results/Figure_3_strat_field.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on local diversity estimated from observational studies. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\sectionTitle{Stratified analysis: experimental studies}
+
+\phantomsection
+
+![](../results/Figure_1_strat_expe.pdf){fig-align="center"}
+
+\figTitle{} Location of diversity comparisons from experimental studies and their distribution across biomes, pressures, organisms and scale. **a**, Global map of the 1,166 comparisons of diversity included. **b–e**, Distribution of comparisons of diversity by type of biome, human pressures, groups of organisms and spatial scale. These variables correspond to the four main factors tested in this study.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+![](../results/Figure_2_strat_expe.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated from experimental studies. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+![](../results/Figure_3_strat_expe.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on local diversity estimated from experimental studies. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\sectionTitle{Additional information on data collection and extraction}
+
+The metadata of bibliographic references in RIS format and their associated full text in PDF format were centralised and managed in a dedicated Zotero database. The text content of the PDF was extracted using the command-line utility tool pdftotext. The extracted text was analysed to detect any references to PCoA and NMDS analyses by searching for the following regular expression :
+
+`(?i)NMDS|(?i)PCOA|(?i)principal +coordinate|(?i)multidimensional +scaling`
+
+The documents containing the target terms were then manually evaluated in order to decide on their inclusion on the basis of a simple rule: presence of at least one biplot graph representing the first two axes of a PCoA or NMDS, and including, while differentiating them, at least two treatments ("control" and "impact"). This procedure was carried out by a single operator. A post-hoc check was carried out on a sub-sample of 100 publications by a second operator. This second operator identified 100% of the publications selected by the main operator (37 in total) while being slightly more conservative by selecting 4 additional references. These references would have been eliminated in any case at the data extraction stage due to the absence of some mandatory information (regarding the contrast of control and impact or other criteria used in the extraction step).
+
+The actual data extraction phase was carried out by the 16 project participants. The extraction methodology was communicated to the participants during two workshops (one face-to-face and one online) and through a briefing document. The workshops included a number of practical demonstrations using a variety of examples to review the various extraction stages and special cases. Face-to-face or remote sessions were then organised, where participants worked together on data extraction and the most complex cases.
+
+The extraction phase was carried out using a dedicated web platform developed specifically for the project. The aim of this platform was to maximise the quality of the user experience while minimising the risk of input errors and offering total control of user privileges to prevent data being exposed. Each participant was provided with a personal account and could add data using an interactive web form. This form supported various features to assist with the data extraction, including required fields, data validation (structures, types, pre-defined options, regular expressions), integration of help in the interface (placeholders and tooltips), and dynamic layout (conditional display of components). The website was built on the content management system Drupal (v.9) and was backed by a MySQL database that connected bibliographic references to data added by users in a seamless and secure way.
+
+{{< pagebreak >}}
+
+![](screen_website.pdf){fig-align="center" width="90%"}
+
+\figTitle{} Screenshots of the interface of the web platform developed for data extraction. Connected users were **a**, invited to read and extract data from a publication which was randomly selected from the backend database. If they accepted, they were redirected to **b**, an interactive form designed to assist them with data extraction (only an extract of this form is shown). After they validated the form, data were automatically submitted to the database and users were invited to proceed with a new publication.
+
+\sectionTitle{Impact of additional samples in PCoA/NMDS on effect size estimation}
+
+Our meta-analysis is based on the extraction of sample coordinates from PCoA or NMDS two-dimensional graphs. It is common for several groups of samples or treatments to be represented on the same graph, which led us either to extract several comparisons per graph, or to ignore certain groups of samples (the rules applied for this choice are explained in the "Search strategy" part of the Methods section of the manuscript). The inclusion of additional samples or groups of samples can modify the configuration of the points as calculated by the projection methods, with the possible consequence that the observed distances no longer truly reflect the patterns studied. The impact of other sample groups in the analyses is *a priori* limited since our effect sizes (LRR homogeneity and LRR shift) depend on the relative distances and not the absolute distances between points. We show by simulation that this effect is indeed limited.
+
+Our approach is as follows. We randomly generate a set of communities distributed in $n$ groups $(3 \leq n \leq 5)$, each group being defined by its own environmental conditions. We then compute a first PCoA (or NMDS) for the communities belonging to the first two groups, from which we calculate the LRR homogeneity and LRR shift effect sizes. We then compute a second PCoA (or NMDS), this time with all the groups, from which we calculate the LRR homogeneity and LRR shift effect sizes for the first two groups only. The comparison of LRR homogeneity and LRR shift between the two PCoAs allows us to estimate the bias induced by the presence of other groups in the analysis. Details of the community simulation are given in the following pseudo-code (the R code used is available on GitHub).
+
+```{=tex}
+\phantomsection
+\listingTitle{}
+
+\begin{lstlisting}[label=some-code,caption=\textbf{Listing S1} Algorithm for community simulation,mathescape=true]
+Determine the number of groups, $n$, an integer randomly chosen in $[3, 4, 5]$.
+Determine the number of communities for each group, where each value is an integer randomly chosen in $[20, \ldots, 200]$.
+Determine the number of environmental dimensions, $m$, an integer randomly chosen in $[3, 4, 5]$.
+Determine the number of species in the pool, $s$, an integer randomly chosen in $[15, \ldots, 100]$, and create $S$ an indexed collection of species of size $s$.
+Create a grouping vector, $G$, where each element $G_i$ is an integer in $[1, \ldots, n]$ and represents the group membership of each communities $C_i$.
+Generate an $s \times m$ random matrix $M$ with each element independently sampled from a uniform distribution in the range $[-1, 1]$, representing the means of the normal distributions of each species along each environmental dimension.
+Generate an $s \times m$ random matrix $V$ with each element independently sampled from a uniform distribution in the range $[0, 1]$, representing the standard deviation of the normal distributions of each species along each environmental dimension.
+Generate an $n \times m$ random matrix $E$ containing environmental conditions for each group along each environmental dimension, with each element independently sampled from a normal distribution $\mathcal{N}(\mu = 0,\,\sigma^{2}= 0.05^2)$.
+For each community $C_i$ belonging to the group $G_i$, generate species abundances by randomly drawing 300 individuals from $S$, where for each species $S_j$ the probability to be sampled is weighted by the product of the densities of its normal distributions along each environmental dimension $\forall k \in \{1,\ldots,m\}$, $\mathcal{N}(\mu_{j,k} = M_{j,k},\,\sigma_{j,k}^{2}= V_{j,k}^2)$ corresponding to the environmental conditions of the community $E_{G_i,k}$.
+\end{lstlisting}
+```
+In total, we simulated 1000 independent sets of communities. Overall, we found a strong correlation between LRR homogeneity derived from the 2 groups analysis and LRR homogeneity derived from the \>2 groups analysis (Figure S8a,c). This correlation was $\rho=0.85$ (t = 51.53, df = 998, P \< 0.001) for PCoA and $\rho=0.70$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S9a and S9c show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is 0.004 for PCoA and -0.007 for NMDS. One sample t-tests show that neither value is statistically different from zero (PCoA: t = 0.984, df = 999, P = 0.325; NMDS: t = -1.371, df = 999, P = 0.170), indicating the absence of bias.
+
+We also found a very strong correlation between the LRR shift values derived from the 2 groups and the \>2 groups analyses (Figure S8b,d). This correlation was $\rho=0.99$ (t = 218.27, df = 998, P \< 0.001) for PCoA and $\rho=0.83$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S9b and S9d show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is -0.035 for PCoA and 0.063 for NMDS. One sample t-tests show that both values are statistically different from zero (PCoA: t = -9.419, df = 999, P \< 0.001; NMDS: t = 3.447, df = 999, P \< 0.001), indicating a very small but consistent bias, possibly driven in the case of the NMDS by the series of outliers observed in Figure S8d and S9d.
+
+{{< pagebreak >}}
+
+```{r}
+# PCOA
+sim <- readRDS("../computed/sim_beta_pcoa.rds")
+
+# HOMOGENEITY
+p_PCOA_LRRH_xy <- sim %>% 
+  ggplot(aes(homogeneity_2, homogeneity_all)) +
+  geom_abline(aes(slope = 1, intercept = 0), linewidth = 0.3) +
+  geom_point(alpha = 0.2, size = 2) +
+  labs(title = "PCoA") +
+  xlab("LRR homogeneity (2 groups)") +
+  ylab("LRR homogeneity (>2 groups)") +
+  theme_bw()
+  
+p_PCOA_LRRH_hist <- sim %>% 
+  ggplot(aes(homogeneity_diff)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  labs(title = "PCoA") +
+  xlab("LRR homogenity differences") +
+  theme_bw()
+
+# SHIFT
+p_PCOA_LRRS_xy <- sim %>% 
+  ggplot(aes(shift_2, shift_all)) +
+  geom_abline(aes(slope = 1, intercept = 0), linewidth = 0.3) +
+  geom_point(alpha = 0.2, size = 2) +
+  labs(title = "PCoA") +
+  xlab("LRR shift (2 groups)") +
+  ylab("LRR shift (>2 groups)") +
+  theme_bw()
+
+p_PCOA_LRRS_hist <- sim %>% 
+  ggplot(aes(shift_diff)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  labs(title = "PCoA") +
+  xlab("LRR shift differences") +
+  theme_bw()
+
+# NMDS
+sim <- readRDS("../computed/sim_beta_nmds.rds")
+
+# HOMOGENEITY
+p_NMDS_LRRH_xy <- sim %>% 
+  ggplot(aes(homogeneity_2, homogeneity_all)) +
+  geom_abline(aes(slope = 1, intercept = 0), linewidth = 0.3) +
+  geom_point(alpha = 0.2, size = 2) +
+  labs(title = "NMDS") +
+  xlab("LRR homogeneity (2 groups)") +
+  ylab("LRR homogeneity (>2 groups)") +
+  theme_bw()
+
+p_NMDS_LRRH_hist <- sim %>% 
+  ggplot(aes(homogeneity_diff)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  labs(title = "NMDS") +
+  xlab("LRR homogenity differences") +
+  theme_bw()
+
+# SHIFT
+p_NMDS_LRRS_xy <- sim %>% 
+  ggplot(aes(shift_2, shift_all)) +
+  geom_abline(aes(slope = 1, intercept = 0), linewidth = 0.3) +
+  geom_point(alpha = 0.2, size = 2) +
+  labs(title = "NMDS") +
+  xlab("LRR shift (2 groups)") +
+  ylab("LRR shift (>2 groups)") +
+  theme_bw()
+
+p_NMDS_LRRs_hist <- sim %>% 
+  ggplot(aes(shift_diff)) +
+  geom_histogram() +
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  labs(title = "NMDS") +
+  xlab("LRR shift differences") +
+  theme_bw()
+
+plots_sim_beta <- list()
+
+plots_sim_beta$xy <- (p_PCOA_LRRH_xy + p_PCOA_LRRS_xy) / (p_NMDS_LRRH_xy + p_NMDS_LRRS_xy) +
+  plot_annotation(tag_levels = 'a') &
+  theme(plot.tag = element_text(size = 8, face = "bold")) +
+  theme(legend.position = "none",
+        plot.title = element_text(size = 9, hjust = 0.5),
+        axis.title = element_text(size = 8),
+        axis.text = element_text(size = 7))
+
+plots_sim_beta$hist <- (p_PCOA_LRRH_hist + p_PCOA_LRRS_hist) / (p_NMDS_LRRH_hist + p_NMDS_LRRs_hist) +
+  plot_annotation(tag_levels = 'a') &
+  theme(plot.tag = element_text(size = 8, face = "bold")) +
+    theme(legend.position = "none",
+        plot.title = element_text(size = 9, hjust = 0.5),
+        axis.title = element_text(size = 8),
+        axis.text = element_text(size = 7))
+
+
+```
+
+\phantomsection
+
+```{r fig.align = "center", out.width = "100%", fig.height=5}
+plots_sim_beta$xy
+```
+
+\figTitle{} Relationship between the effect-sizes estimated from an analysis based on two groups of points and the same effect-sizes estimated from the same analysis but including additional groups of points. **a**. LRR homogeneity from PCoA, **b**. LRR shift from PCoA, **c**. LRR homogeneity from NMDS and **d**. LRR shift from NMDS. The black line delineates the 1:1 line, corresponding to perfect correspondence between the two estimates.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+```{r fig.align = "center", out.width = "100%", fig.height=5}
+plots_sim_beta$hist
+```
+
+\figTitle{} Distributions of the differences between the effect-sizes estimated from an analysis based on two groups of points and the same effect-sizes estimated from the same analysis but including additional groups of points. **a**. LRR homogeneity from PCoA, **b**. LRR shift from PCoA, **c**. LRR homogeneity from NMDS and **d**. LRR shift from NMDS.
+
+{{< pagebreak >}}
+
+\sectionTitle{Replication of Figure 2 and 3 using weighted regressions}
+
+\phantomsection
+
+![](../results/Figure_2_sqrt_weighted_var.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated using weighted regressions. The weighting scheme applied is the inverse of the square root of the variance of the effect sizes, computed following Zhou et al.[@zhou2020]. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\phantomsection
+
+![](../results/Figure_3_weighted_var.pdf){fig-align="center"}
+
+\figTitle{} Impacts of human pressures on local diversity estimated from experimental studies using weighted regression. The weighting scheme applied is the inverse of the variance of the effect size, computed following Hedges et al.[@hedges1999]. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+
+{{< pagebreak >}}
+
+\sectionTitle{Assessment of publication bias}
+
+We assessed potential publication bias for each outcome measure, namely LRR homogeneity, LRR shift and LRR local diversity. Our strategy was based on a combination of funnel plot visual inspection[@møller2001], file drawer analysis[@rosenberg2005] and P-curve analysis[@simonsohn2015].
+
+We observe no evidence of asymmetry on the funnel plots with regard to LRR homogeneity (Figure S1a) and LRR local diversity (Figure S1c) while for LRR shift a small asymmetry can be observed (Figure S1b). This asymmetry, however, appears to be linked to the effect size distribution and has no apparent relationship with the standard error. A small-study effect, on the contrary, would have resulted in an over-representation of studies in the lower right-hand part of the funnel plot only.
+
+To ascertain the robustness of our findings against possible publication bias, we performed a File Drawer Analysis and calculated the Fail-Safe N, a measure estimating the number of additional studies with null findings required to render observed effects non-significant. The File Drawer Analysis was conducted with the function `fsn` from the R package `metafor` using the generalised method of Orwin and Rosenberg[@orwin1983; @rosenberg2005]. We found Fail-Safe N values of 19,689 for LRR homogeneity, 2,757,894 for LRR shift and 12,052 for LRR local diversity. Overall these large to very large values (5 to 1000 times more studies than included in our analyses) indicate that our results are robust to publication bias.
+
+Finally, we performed a test for p-values right-skewness (P-Curve analysis) to further validate the robustness of our results, specifically with regards to p-hacking. For every tested effect sizes, we found that both the half and full p-curve tests clearly indicated a right-skewed shape: LRR homogeneity (Full: Z = -21.8, P \< 0.001, Half: Z = -20.3, P \< 0.001), LRR shift (Full: Z = -62.0, P \< 0.001, Half: Z = -51.5, P \< 0.001) and LRR local diversity (Full: Z = -66.4, P \< 0.001, Half: Z = -67.2, P \< 0.001). Together these results indicate that there is strong evidential value behind our data.
+
+\phantomsection
+
+```{r}
+test_pub_bias$beta_similarity_funnel +
+  test_pub_bias$beta_structure_funnel +
+  test_pub_bias$alpha_funnel +
+  plot_annotation(tag_levels = 'a') &
+  theme(plot.tag = element_text(size = 8, face = "bold"))
+```
+
+\figTitle{} Funnel plots of effect sizes versus standard error for **a**. LRR homogeneity, **b**. LRR shift and **c**. LRR local diversity.
+
+{{< pagebreak >}}
+
+\sectionTitle{Spatial distribution of reference and impacted sites}
+
+We analysed the spatial distribution of reference and impacted study sites in order to compare geographical patterns with those observed in biological communities.
+
+To this end, we extracted the geographical coordinates of reference and impacted sites for a subset of 200 articles. The coordinates of impacted sites were extracted directly from the maps published in the articles, using the same digitising technique described in the manuscript for biological communities. We also used the same effect sizes (LRR homogeneity and LRR shift) here applied to geographic distance matrices to analyse whether 1) distances between samples within treatments were equivalent (LRR homogeneity) and 2) whether distances between treatments were greater than distances within treatments (LRR shift).
+
+Spatial LRR homogeneity exhibited a distribution closely centred around zero (Figure S10a) and a small (0.17) yet significant mean value (t = 2.979, df = 199, P = 0.003). Similarly we found the mean of spatial LRR shift (0.32) significant (t = 7.087, df = 199, P \< 0.001) and its distribution right skewed (Figure S10b). However, neither of the two space-based effect-sizes seems clearly correlated with their equivalent community-based measures (LRR homogeneity: $\rho=0.08$, t = 1.142, df = 198, P = 0.25, Figure S10c; LRR shift: $\rho=0.13$, t = 1.888, df = 198, P = 0.06, Figure S10d).
+
+{{< pagebreak >}}
+
+\phantomsection
+
+```{r fig.align = "center", out.width = "100%", fig.height=5}
+geo <- readRDS("../computed/geo.rds")
+
+p_hist_h <- ggplot(geo) +
+  geom_histogram(aes(homogeneity)) +
+  xlab("LRR homogeneity (space)") + 
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  theme_bw()
+
+p_hist_s <- ggplot(geo) +
+  geom_histogram(aes(shift)) +
+  xlab("LRR shift (space)") + 
+  geom_vline(aes(xintercept = 0), linetype = 1) +
+  theme_bw()
+
+p_xy_hh <- ggplot(geo) +
+  geom_point(aes(homogeneity, beta_similarity)) +
+  xlab("LRR homogeneity (space)") + 
+  ylab("LRR homogeneity (communities)") + 
+  theme_bw()
+
+p_xy_ss <- ggplot(geo) +
+  geom_point(aes(shift, beta_structure)) +
+  xlab("LRR shift (space)") + 
+  ylab("LRR shift (communities)") + 
+  theme_bw()
+
+
+(p_hist_h + p_hist_s) / (p_xy_hh + p_xy_ss) +
+  plot_annotation(tag_levels = 'a') &
+  theme(plot.tag = element_text(size = 8, face = "bold")) +
+    theme(legend.position = "none",
+        plot.title = element_text(size = 9, hjust = 0.5),
+        axis.title = element_text(size = 8),
+        axis.text = element_text(size = 7))
+```
+
+\figTitle{} Distributions of **a**. LRR homogeneity and **b**. LRR shift values computed from spatial distances for a subset of 186 studies. Relationship between **c.** LRR homogeneity and **d.** LRR shift values computed from spatial and community distances.
+
+{{< pagebreak >}}
+
+# Supplementary References
