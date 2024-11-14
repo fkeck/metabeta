@@ -3,7 +3,7 @@
 
 This repository provides R code and data to reproduce quantitative results and figures from the manuscript:
 
-Keck, F. et al. The global human impact on biodiversity (2023).
+Keck, F. et al. The global human impact on biodiversity (2024).
 
 ## System requirements
 
@@ -29,6 +29,6 @@ Data can be found in the `/data` directory. The main dataset is provided in JSON
 
 ### Analyses
 
-Scripts can be found in the `/R` directory. They are organized in separated modules but all the analyses can be ran from the master script `run_all.R`. The execution time is around 5-10 minutes on a standard laptop.
+Scripts can be found in the `/R` directory. They are organized in separated modules but all the analyses can be ran from the master script `run_all.R`. The execution time for the main results is around 5-10 minutes on a standard laptop.
 
 Once the analyses are completed, the results can be found in the active session and the figures can be found in the `results` folder.
