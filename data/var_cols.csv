@@ -1,0 +1,24 @@
+plot_id,variable,var_col
+Global,All data,#5a5a5aff
+Biome,Freshwater,#56dc97ff
+Biome,Marine,#aaeecbff
+Biome,Terrestrial,#23a964ff
+Organisms,Birds,#f8879fff
+Organisms,Fish,#f66583ff
+Organisms,Fungi,#f33f65ff
+Organisms,Invertebrates,#900925ff
+Organisms,Mammals,#fccfd8ff
+Organisms,Microbes,#b20b2eff
+Organisms,Other,#f11d4aff
+Organisms,Plants,#d80d38ff
+Organisms,Reptiles/Amphibians,#faadbdff
+Pressure,Climate change,#fcca9cff
+Pressure,Habitat change,#c76205ff
+Pressure,Invasive species,#fbaf6aff
+Pressure,Pollution,#f97a06ff
+Pressure,Resource exploitation,#fa9438ff
+Scale,Point/Microhabitat,#8a65cdff
+Scale,Plot,#6d3fc0ff
+Scale,Local,#57329aff
+Scale,Regional,#a78cd9ff
+Scale,Continental/Global,#c4b2e6ff
