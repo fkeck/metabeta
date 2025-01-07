@@ -22,7 +22,6 @@ bibliography: references.bib
 csl: nature.csl
 ---
 
-
 ```{=tex}
 \vspace{-1.7cm}
 \begin{center}
@@ -73,7 +72,6 @@ Rebecca Oester\textsuperscript{1,2,12}, Kálmán Tapolczai\textsuperscript{13,14
 \textsuperscript{*} Corresponding authors
 
 \end{footnotesize}  
-
 ```
 ```{=tex}
 \onehalfspacing
@@ -96,6 +94,14 @@ Rebecca Oester\textsuperscript{1,2,12}, Kálmán Tapolczai\textsuperscript{13,14
   \refstepcounter{figCounter}\vspace{18pt}%
   \addcontentsline{toc}{subsubsection}{\thisFigCount\space#1}%
   \noindent{\textbf{\thisFigCount}}%
+}
+
+\newcounter{tableCounter}
+\newcommand{\thisTableCount}{Table S\arabic{tableCounter}}
+\newcommand{\tableTitle}[1]{%
+  \refstepcounter{tableCounter}\vspace{18pt}%
+  \addcontentsline{toc}{subsubsection}{\thisTableCount\space#1}%
+  \noindent{\textbf{\thisTableCount}}%
 }
 
 \newcounter{listingCounter}
@@ -122,55 +128,33 @@ test_pub_bias <- readRDS("../computed/test_pub_bias.rds")
 
 # Supplementary Methods
 
-\sectionTitle{Stratified analysis: observational studies}
+\sectionTitle{Meta-analytical framework}
 
 \phantomsection
 
-![](../results/Figure_1_strat_field.pdf){fig-align="center"}
+![](framework.pdf){fig-align="center"}
 
-\figTitle{} Location of diversity comparisons from observational studies and their distribution across biomes, pressures, organisms and scale. **a**, Global map of the 2,501 comparisons of diversity included. **b–e**, Distribution of comparisons of diversity by type of biome, human pressures, groups of organisms and spatial scale. These variables correspond to the four main factors tested in this study.
+\figTitle{} Principal coordinates analysis (PCoA) and non-metric multidimensional scaling (NMDS) are two methods that can be used to display the information contained in a matrix of dissimilarity. Distances between communities on the plot reflect, in two dimensions, their dissimilarities. Therefore, these plots can be used to assess the changes in community structure (shift in point cloud location) and the changes in similarity (shift in point cloud dispersion). The meta-analytic framework starts from a plot of projection of the distances between communities, comparing reference with impacted communities as frequently reported in publications. Community coordinates are manually extracted from the plot using a digitising tool. Coordinates are then translated into a pairwise distance matrix. Finally, these distances are used to compute two measures of effect-size representing the changes in terms of homogeneity and shift in composition.
 
 {{< pagebreak >}}
 
+\sectionTitle{Structured query used on Web of Science}
+
 \phantomsection
 
-![](../results/Figure_2_strat_field.pdf){fig-align="center"}
+![](keywords_table.pdf){fig-align="center"}
 
-\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated from observational studies. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+\tableTitle{} Each facet of the query was described by a disjunction of keywords separated by “OR” operators. The final query combined all facets using “AND” operators (not shown in the table). Documents were searched starting from 1960. The list of human pressures was adapted from the IPBES Global assessment report (Supplementary materials SM2.1). Field tag DT stands for Document Type, WC for Web of Science Categories, PY for Year Published, and TS for Topic which includes title, abstract, and keywords. Asterisks (\*) represent any group of characters, question marks (?) represent any single character and dollar signs (\$) represent zero or one character.
 
 {{< pagebreak >}}
 
-\phantomsection
-
-![](../results/Figure_3_strat_field.pdf){fig-align="center"}
-
-\figTitle{} Impacts of human pressures on local diversity estimated from observational studies. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
-
-{{< pagebreak >}}
-
-\sectionTitle{Stratified analysis: experimental studies}
+\sectionTitle{Modified PRISMA flowchart}
 
 \phantomsection
 
-![](../results/Figure_1_strat_expe.pdf){fig-align="center"}
+![](PRISMA.pdf){fig-align="center"}
 
-\figTitle{} Location of diversity comparisons from experimental studies and their distribution across biomes, pressures, organisms and scale. **a**, Global map of the 1,166 comparisons of diversity included. **b–e**, Distribution of comparisons of diversity by type of biome, human pressures, groups of organisms and spatial scale. These variables correspond to the four main factors tested in this study.
-
-{{< pagebreak >}}
-
-\phantomsection
-
-![](../results/Figure_2_strat_expe.pdf){fig-align="center"}
-
-\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated from experimental studies. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
-
-{{< pagebreak >}}
-
-\phantomsection
-
-![](../results/Figure_3_strat_expe.pdf){fig-align="center"}
-
-\figTitle{} Impacts of human pressures on local diversity estimated from experimental studies. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
+\figTitle{} Number of publications included or excluded at each stage of the literature search.
 
 {{< pagebreak >}}
 
@@ -214,9 +198,9 @@ Generate an $n \times m$ random matrix $E$ containing environmental conditions f
 For each community $C_i$ belonging to the group $G_i$, generate species abundances by randomly drawing 300 individuals from $S$, where for each species $S_j$ the probability to be sampled is weighted by the product of the densities of its normal distributions along each environmental dimension $\forall k \in \{1,\ldots,m\}$, $\mathcal{N}(\mu_{j,k} = M_{j,k},\,\sigma_{j,k}^{2}= V_{j,k}^2)$ corresponding to the environmental conditions of the community $E_{G_i,k}$.
 \end{lstlisting}
 ```
-In total, we simulated 1000 independent sets of communities. Overall, we found a strong correlation between LRR homogeneity derived from the 2 groups analysis and LRR homogeneity derived from the \>2 groups analysis (Figure S8a,c). This correlation was $\rho=0.85$ (t = 51.53, df = 998, P \< 0.001) for PCoA and $\rho=0.70$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S9a and S9c show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is 0.004 for PCoA and -0.007 for NMDS. One sample t-tests show that neither value is statistically different from zero (PCoA: t = 0.984, df = 999, P = 0.325; NMDS: t = -1.371, df = 999, P = 0.170), indicating the absence of bias.
+In total, we simulated 1000 independent sets of communities. Overall, we found a strong correlation between LRR homogeneity derived from the 2 groups analysis and LRR homogeneity derived from the \>2 groups analysis (Figure S4a,c). This correlation was $\rho=0.85$ (t = 51.53, df = 998, P \< 0.001) for PCoA and $\rho=0.70$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S5a and S5c show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is 0.004 for PCoA and -0.007 for NMDS. One sample t-tests show that neither value is statistically different from zero (PCoA: t = 0.984, df = 999, P = 0.325; NMDS: t = -1.371, df = 999, P = 0.170), indicating the absence of bias.
 
-We also found a very strong correlation between the LRR shift values derived from the 2 groups and the \>2 groups analyses (Figure S8b,d). This correlation was $\rho=0.99$ (t = 218.27, df = 998, P \< 0.001) for PCoA and $\rho=0.83$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S9b and S9d show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is -0.035 for PCoA and 0.063 for NMDS. One sample t-tests show that both values are statistically different from zero (PCoA: t = -9.419, df = 999, P \< 0.001; NMDS: t = 3.447, df = 999, P \< 0.001), indicating a very small but consistent bias, possibly driven in the case of the NMDS by the series of outliers observed in Figure S8d and S9d.
+We also found a very strong correlation between the LRR shift values derived from the 2 groups and the \>2 groups analyses (Figure S4b,d). This correlation was $\rho=0.99$ (t = 218.27, df = 998, P \< 0.001) for PCoA and $\rho=0.83$ (t = 31.176, df = 998, P \< 0.001) for NMDS. Figures S5b and S9d show the distribution of the difference between the two variables for the PCoA and NMDS analyses. The mean of this difference is -0.035 for PCoA and 0.063 for NMDS. One sample t-tests show that both values are statistically different from zero (PCoA: t = -9.419, df = 999, P \< 0.001; NMDS: t = 3.447, df = 999, P \< 0.001), indicating a very small but consistent bias, possibly driven in the case of the NMDS by the series of outliers observed in Figures S4d and S5d.
 
 {{< pagebreak >}}
 
@@ -340,29 +324,11 @@ plots_sim_beta$hist
 
 {{< pagebreak >}}
 
-\sectionTitle{Replication of Figure 2 and 3 using weighted regressions}
-
-\phantomsection
-
-![](../results/Figure_2_sqrt_weighted_var.pdf){fig-align="center"}
-
-\figTitle{} Impacts of human pressures on homogeneity and shifts in composition of biological communities estimated using weighted regressions. The weighting scheme applied is the inverse of the square root of the variance of the effect sizes, computed following Zhou et al.[@zhou2020]. **a**, Log-response ratio of community homogeneity (logarithm-transformed ratio of impacted to reference values, LRR homogeneity). **b**, Log-response ratio of community composition shift (LRR shift). The global response (all data) is shown on the first row of each panel and is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
-
-{{< pagebreak >}}
-
-\phantomsection
-
-![](../results/Figure_3_weighted_var.pdf){fig-align="center"}
-
-\figTitle{} Impacts of human pressures on local diversity estimated from experimental studies using weighted regression. The weighting scheme applied is the inverse of the variance of the effect size, computed following Hedges et al.[@hedges1999]. Log-response ratio of local diversity (logarithm-transformed ratio of impacted to reference values, LRR local diversity). The global response (all data) shown on the first row is separated by factors in the following rows. The numbers between parentheses indicate the number of comparisons. For each category the dot represents the marginal mean computed from the model; dot size is proportional to number of studies included. The larger bar shows the 95 % confidence interval and the thinner bar represents the 99 % confidence interval.
-
-{{< pagebreak >}}
-
 \sectionTitle{Assessment of publication bias}
 
 We assessed potential publication bias for each outcome measure, namely LRR homogeneity, LRR shift and LRR local diversity. Our strategy was based on a combination of funnel plot visual inspection[@møller2001], file drawer analysis[@rosenberg2005] and P-curve analysis[@simonsohn2015].
 
-We observe no evidence of asymmetry on the funnel plots with regard to LRR homogeneity (Figure S12a) and LRR local diversity (Figure S12c) while for LRR shift a small asymmetry can be observed (Figure S12b). This asymmetry, however, appears to be linked to the effect size distribution and has no apparent relationship with the standard error. A small-study effect, on the contrary, would have resulted in an over-representation of studies in the lower right-hand part of the funnel plot only.
+We observe no evidence of asymmetry on the funnel plots with regard to LRR homogeneity (Figure S6a) and LRR local diversity (Figure S6c) while for LRR shift a small asymmetry can be observed (Figure S6b). This asymmetry, however, appears to be linked to the effect size distribution and has no apparent relationship with the standard error. A small-study effect, on the contrary, would have resulted in an over-representation of studies in the lower right-hand part of the funnel plot only.
 
 To ascertain the robustness of our findings against possible publication bias, we performed a File Drawer Analysis and calculated the Fail-Safe N, a measure estimating the number of additional studies with null findings required to render observed effects non-significant. The File Drawer Analysis was conducted with the function `fsn` from the R package `metafor` using the generalised method of Orwin and Rosenberg[@orwin1983; @rosenberg2005]. We found Fail-Safe N values of 19,689 for LRR homogeneity, 2,757,894 for LRR shift and 12,052 for LRR local diversity. Overall these large to very large values (5 to 1000 times more studies than included in our analyses) indicate that our results are robust to publication bias.
 
@@ -388,7 +354,7 @@ We analysed the spatial distribution of reference and impacted study sites in or
 
 To this end, we extracted the geographical coordinates of reference and impacted sites for a subset of 200 articles. The coordinates of impacted sites were extracted directly from the maps published in the articles, using the same digitising technique described in the manuscript for biological communities. We also used the same effect sizes (LRR homogeneity and LRR shift) here applied to geographic distance matrices to analyse whether 1) distances between samples within treatments were equivalent (LRR homogeneity) and 2) whether distances between treatments were greater than distances within treatments (LRR shift).
 
-Spatial LRR homogeneity exhibited a distribution closely centred around zero (Figure S13a) and a small (0.17) yet significant mean value (t = 2.979, df = 199, P = 0.003). Similarly we found the mean of spatial LRR shift (0.32) significant (t = 7.087, df = 199, P \< 0.001) and its distribution right skewed (Figure S13b). However, neither of the two space-based effect-sizes seems clearly correlated with their equivalent community-based measures (LRR homogeneity: $\rho=0.08$, t = 1.142, df = 198, P = 0.25, Figure S13c; LRR shift: $\rho=0.13$, t = 1.888, df = 198, P = 0.06, Figure S13d).
+Spatial LRR homogeneity exhibited a distribution closely centred around zero (Figure S7a) and a small (0.17) yet significant mean value (t = 2.979, df = 199, P = 0.003). Similarly we found the mean of spatial LRR shift (0.32) significant (t = 7.087, df = 199, P \< 0.001) and its distribution right skewed (Figure S7b). However, neither of the two space-based effect-sizes seems clearly correlated with their equivalent community-based measures (LRR homogeneity: $\rho=0.08$, t = 1.142, df = 198, P = 0.25, Figure S7c; LRR shift: $\rho=0.13$, t = 1.888, df = 198, P = 0.06, Figure S7d).
 
 {{< pagebreak >}}
 
