@@ -3,7 +3,7 @@
 
 This repository provides R code and data to reproduce quantitative results and figures from the manuscript:
 
-Keck, F. et al. The global human impact on biodiversity (2024).
+Keck, F. et al. The global human impact on biodiversity (2025).
 
 ## System requirements
 
