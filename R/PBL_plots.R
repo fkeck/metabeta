@@ -304,7 +304,7 @@ make_fig4 <- function(dat, plot_icons = TRUE) {
     
     d <- models$reg_subgrp %>% 
       mutate(plot_id = as.character(plot_id), variable = as.character(variable)) %>% 
-      mutate(label = variable) %>% 
+      mutate(label = paste0(variable, " (", map_int(mod, function(x) nrow(x$frame)), ")")) %>% 
       dplyr::filter(x == indepv & y == depv) %>% 
       mutate(plot_id = fct_relevel(plot_id,
                                    "Global",
@@ -343,7 +343,7 @@ make_fig4 <- function(dat, plot_icons = TRUE) {
       for(j in d$variable[!sapply(d$img, is.null)]) {
         d_j <- d %>% dplyr::filter(variable == j)
         plots$bp_slopes[[i]] <- plots$bp_slopes[[i]] +
-          rphylopic::geom_phylopic(aes(x = img_offset, y = variable, img = img), color = "#5A5A5A", size = d_j$scale, data = d_j)
+          rphylopic::geom_phylopic(aes(x = img_offset, y = label, img = img), color = "#5A5A5A", size = d_j$scale, data = d_j)
       }
     }
   }
