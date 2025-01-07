@@ -1,4 +1,8 @@
 
+
+[![DOI](https://zenodo.org/badge/888406362.svg)](https://doi.org/10.5281/zenodo.14608769)
+
+
 # Code and data for the manuscript
 
 This repository provides R code and data to reproduce quantitative results and figures from the manuscript:
