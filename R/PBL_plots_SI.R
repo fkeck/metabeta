@@ -42,7 +42,7 @@ p4  <- patchwork::wrap_plots(plots_cov[seq(4, 16, by = 4)[-4]],
 plots$SI_plot_cross <-
   p1/p2/p3/p4 +
   plot_annotation(tag_levels = "a")  &
-  theme(plot.tag = element_text(size = 8, face = "bold"))
+  theme(plot.tag = element_text(size = 7, face = "bold"))
 
-ggsave("results/SI_plot_cross.pdf", plot = plots$SI_plot_cross, width = 183, height = 260, units = "mm", device = cairo_pdf)
+ggsave("results/SI_plot_cross.pdf", plot = plots$SI_plot_cross, width = 180, height = 240, units = "mm", device = cairo_pdf)
 
